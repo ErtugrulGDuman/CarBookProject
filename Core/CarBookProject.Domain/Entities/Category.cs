@@ -14,3 +14,4 @@ namespace CarBookProject.Domain.Entities
         //public List<Blog> Blogs { get; set; }
     }
 }
+
