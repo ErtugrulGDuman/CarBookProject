@@ -1,5 +1,6 @@
 ﻿using CarBookProject.Application.Interfaces;
 using CarBookProject.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,21 @@ namespace CarBookProject.Persistence.Repositories
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly CarBookContext _context;
-        public Task CreateAsync(T entity)
+
+        public Repository(CarBookContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task<List<T>> GetAllAsync()
+        public async Task CreateAsync(T entity)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Add(entity);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<List<T>> GetAllAsync()
+        {
+            return await _context.Set<T>().ToListAsync();
         }
 
         public Task<T?> GetByFilterAsync(Expression<Func<T, bool>> filter)
@@ -27,19 +35,21 @@ namespace CarBookProject.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Set<T>().FindAsync(id);
         }
 
-        public Task RemoveAsync(T entity)
+        public async Task RemoveAsync(T entity)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task UpdateAsync(T entity)
+        public async Task UpdateAsync(T entity)
         {
-            throw new NotImplementedException();
+            _context.Set<T>().Update(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }
