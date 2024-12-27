@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBookProject.Dto.LocationDtos
+namespace CarBookProject.Dto.CategoryDtos
 {
-    public class UpdateLocationDto
+    public class CreateCategoryDto
     {
-        public int LocationId { get; set; }
         public string Name { get; set; }
     }
 }

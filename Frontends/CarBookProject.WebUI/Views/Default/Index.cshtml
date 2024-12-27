@@ -31,9 +31,8 @@
                                 <h2>Şimdi Aracınızı Kiralayın</h2>
                                 <div class="form-group">
                                     <label for="" class="label">Alınacak Lokasyon</label>
-                                    @Html.DropDownListFor(x => x.LocationID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control", @id = "drop" })
+                                    @Html.DropDownList("LocationId", (IEnumerable<SelectListItem>)ViewBag.v, "Select a Location", new { @class = "form-control" })
                                 </div>
-
                                 <div class="d-flex">
                                     <div class="form-group mr-2">
                                         <label for="" class="label">Alınmak İstenen Tarih</label>
@@ -105,7 +104,7 @@
 
     @await Component.InvokeAsync("_TestimonialComponantPartial")
 
-    @await Component.InvokeAsync("_GetLast3BlogsWithAuthorListComponentPartial")
+    @* @await Component.InvokeAsync("_GetLast3BlogsWithAuthorListComponentPartial") *@
 
     @await Component.InvokeAsync("_DefaultStatisticsComponentPartial")
 

@@ -17,6 +17,12 @@ namespace CarBookProject.WebUI.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            ViewBag.v = new List<SelectListItem>
+            {
+                new SelectListItem { Text = "Ankara", Value = "1" },
+                new SelectListItem { Text = "İstanbul", Value = "2" },
+                new SelectListItem { Text = "İzmir", Value = "3" }
+            };
             var token = User.Claims.FirstOrDefault(x => x.Type == "carbooktoken")?.Value;
             if (token != null)
             {
@@ -30,7 +36,7 @@ namespace CarBookProject.WebUI.Controllers
                                                 select new SelectListItem
                                                 {
                                                     Text = x.Name,
-                                                    Value = x.LocationID.ToString()
+                                                    Value = x.LocationId.ToString()
                                                 }).ToList();
                 ViewBag.v = values2;
             }

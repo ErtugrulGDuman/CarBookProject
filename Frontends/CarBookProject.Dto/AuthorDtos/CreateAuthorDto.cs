@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBookProject.Dto.LocationDtos
+namespace CarBookProject.Dto.AuthorDtos
 {
-    public class UpdateLocationDto
+    public class CreateAuthorDto
     {
-        public int LocationId { get; set; }
         public string Name { get; set; }
+        public string ImageUrl { get; set; }
+        public string Description { get; set; }
     }
 }
