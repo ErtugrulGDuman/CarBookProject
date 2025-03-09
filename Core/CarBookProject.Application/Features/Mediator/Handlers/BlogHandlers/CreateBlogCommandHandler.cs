@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace CarBookProject.Application.Features.Mediator.Handlers.BlogHandlers
 {
-    public class CreatePricingCommandHandler : IRequestHandler<CreateBlogCommand>
+    public class CreateBlogCommandHandler : IRequestHandler<CreateBlogCommand>
     {
         private readonly IRepository<Blog> _repository;
-        public CreatePricingCommandHandler(IRepository<Blog> repository)
+        public CreateBlogCommandHandler(IRepository<Blog> repository)
         {
             _repository = repository;
         }
