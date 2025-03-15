@@ -36,8 +36,8 @@ namespace CarBookProject.WebUI.Controllers
             List<SelectListItem> brandValues = (from x in values
                                                 select new SelectListItem
                                                 {
-                                                    Text = x.name,
-                                                    Value = x.brandID.ToString()
+                                                    Text = x.brandName,
+                                                    Value = x.brandId.ToString()
                                                 }).ToList();
             ViewBag.BrandValues = brandValues;
             return View();
@@ -79,8 +79,8 @@ namespace CarBookProject.WebUI.Controllers
             List<SelectListItem> brandValues = (from x in values1
                                                 select new SelectListItem
                                                 {
-                                                    Text = x.name,
-                                                    Value = x.brandID.ToString()
+                                                    Text = x.brandName,
+                                                    Value = x.brandId.ToString()
                                                 }).ToList();
             ViewBag.BrandValues = brandValues;
 
