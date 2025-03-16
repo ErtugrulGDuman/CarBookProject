@@ -9,9 +9,9 @@ namespace CarBookProject.Dto.BannerDtos
     public class UpdateBannerDto
     {
         public int BannerID { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string VideoDescription { get; set; }
-        public string VideoUrl { get; set; }
+        public string title { get; set; }
+        public string description { get; set; }
+        public string videoDescription { get; set; }
+        public string videoUrl { get; set; }
     }
 }

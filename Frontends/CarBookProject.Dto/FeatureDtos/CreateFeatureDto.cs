@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBookProject.Dto.BrandDtos
+namespace CarBookProject.Dto.FeatureDtos
 {
-    public class CreateBrandDto
+    public class CreateFeatureDto
     {
-        public string brandName { get; set; }
+        public string name { get; set; }
     }
 }
