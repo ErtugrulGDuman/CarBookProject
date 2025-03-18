@@ -39,7 +39,5 @@ namespace CarBookProject.WebUI.Areas.Admin.Controllers
             }
             return View();
         }
-        //BlogListByBlogID
-
     }
 }
