@@ -12,7 +12,8 @@ namespace CarBookProject.WebUI.Controllers
         public AdminCommentController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
-        }
+        } 
+
 
         [Route("Index/{id}")]
         public async Task<IActionResult> Index(int id)
