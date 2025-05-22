@@ -16,6 +16,7 @@ namespace CarBookProject.Persistence.Repositories.StatisticsRepositories
         {
             _context = context;
         }
+
         public string GetBlogTitleByMaxBlogComment()
         {
             //Select Top(1) BlogId,Count(*) as 'Sayi' From Comments Group By BlogID Order By Sayi Desc 
