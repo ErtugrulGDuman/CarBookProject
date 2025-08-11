@@ -14,7 +14,7 @@ namespace CarBookProject.Dto.ReservationDtos
         public string Phone { get; set; }
         public int PickUpLocationID { get; set; }
         public int DropOffLocationID { get; set; }
-        public int CarID { get; set; }
+        public int CarId { get; set; }
         public int Age { get; set; }
         public int DriverLicenseYear { get; set; }
         public string Description { get; set; }
