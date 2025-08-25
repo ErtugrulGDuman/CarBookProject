@@ -13,7 +13,7 @@ namespace CarBookProject.Application.Features.Mediator.Results.CarPricingResults
         public decimal WeeklyAmount { get; set; }
         public decimal MonthlyAmount { get; set; }
         public string CoverImageUrl { get; set; }
-        public string Brand { get; set; }
+        public string BrandName { get; set; }
 
     }
 }
