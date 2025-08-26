@@ -44,12 +44,15 @@ namespace CarBookProject.Persistence.Repositories.CarPricingRepositories
                     {
                         CarPricingViewModel carPricingViewModel = new CarPricingViewModel()
                         {
+                            Brand = reader["Name"].ToString(),
                             Model = reader["Model"].ToString(),
-                            Brand = reader["BrandName"].ToString(),
                             CoverImageUrl = reader["CoverImageUrl"].ToString(),
-                            Amounts = Enumerable.Range(3, reader.FieldCount - 3)
-                .Select(i => reader.IsDBNull(i) ? (decimal?)null : (decimal?)reader.GetDecimal(i))
-                .ToList()
+                            Amounts = new List<decimal>
+                            {
+                                Convert.ToDecimal(reader["2"]),
+                                Convert.ToDecimal(reader["3"]),
+                                Convert.ToDecimal(reader["4"])
+                            }
                         };
                         values.Add(carPricingViewModel);
                     }
