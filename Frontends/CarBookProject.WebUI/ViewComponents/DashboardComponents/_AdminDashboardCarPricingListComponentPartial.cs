@@ -23,7 +23,7 @@ namespace CarBookProject.WebUI.ViewComponents.DashboardComponents
                 var values = JsonConvert.DeserializeObject<List<ResultCarPricingListWithModelDto>>(jsonData);
                 return View(values);
             }
-            return View();
+            return View(new List<ResultCarPricingListWithModelDto>());
         }
     }
 }

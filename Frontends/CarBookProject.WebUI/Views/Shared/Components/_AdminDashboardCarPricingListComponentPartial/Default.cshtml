@@ -22,14 +22,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
+                        @if (Model != null && Model.Any())
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.BrandName</td>
+                                    <td>@item.Model</td>
+                                    <td>₺ @item.DailyAmount</td>
+                                    <td>₺ @item.WeeklyAmount</td>
+                                    <td>₺ @item.MonthlyAmount</td>
+                                </tr>
+                            }
+                        }
+                        else
                         {
                             <tr>
-                                <td class="text-truncate">@item.BrandName</td>
-                                <td class="text-truncate">@item.Model</td>
-                                <td class="text-truncate">₺ @item.DailyAmount</td>
-                                <td class="text-truncate">₺ @item.WeeklyAmount</td>
-                                <td class="text-truncate">₺ @item.MonthlyAmount</td>
+                                <td colspan="5" class="text-center">Kayıt bulunamadı</td>
                             </tr>
                         }
                     </tbody>
